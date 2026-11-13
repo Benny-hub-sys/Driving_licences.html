@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Drive Licence Application</h1>
+
+<p>Key in your age</p>
+
+
+<input id="Demo" value = ""/>
+<button type = "button"
+onclick = "myfunction()">Click here</button>
+
+<p id="demo"></p>
+
+<script>
+function myfunction(){
+let validation;
+let value = document.getElementById("Demo").value.trim();
+let age = Number(value);
+
+// Check for empty input, non-numeric input, and valid range
+if (value === ""){
+     validation = "Please enter your age";
+// Check for non-numeric input
+}else if (isNaN(age)){
+     validation = "Key in numerical values only";
+// Check for age less than or equal to 0
+}else if (age <= 0){
+     validation = "Key in numerical greater than 0";
+// Check for age less than 18
+}else if (age <18){
+     validation = "You are not eligible to apply for driving licences";
+// Check for age 18 or greater
+}else if (age >=18){
+    validation = "You are eligible to apply for driving licences";
+    }
+document.getElementById("demo").innerHTML = "Your validation is:" + " " + validation;
+}
+</script>
+</body>
+</html>
